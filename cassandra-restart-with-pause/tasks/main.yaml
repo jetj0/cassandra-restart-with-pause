@@ -1,0 +1,12 @@
+---
+- name: Cassandra restart all servers with some pause beetween each restart
+  become: true
+  ansible.builtin.shell:
+    cmd: sudo systemctl restart cassandra
+  tags: cassandra-restart-with-pause
+
+  
+- name: Pause for 2 minutes to wait before ansible will reboot next server from inventory list
+  ansible.builtin.pause:
+    minutes: 2
+  tags: cassandra-restart-with-pause
