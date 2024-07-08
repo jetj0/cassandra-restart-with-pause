@@ -1,16 +1,6 @@
 ---
-
 - name: Entrypoint for all roles
   hosts: all
   serial: 1
   roles:
-    - cassandra-backup
-    - cassandra-operations
-    - cassanda-backup-delete-folders
-    - cassandra-remove-old-snapshots
-    - cassandra-restore
-    - cassandra-install
-    - cassandra-configure
-    - elasticsearch
-    - kibana    
     - cassandra-restart-with-pause
